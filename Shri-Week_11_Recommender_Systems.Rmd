@@ -1,0 +1,72 @@
+---
+---
+---
+
+Title: "Analysis of YouTube's Recommendation System"\
+author: "Shri Tripathi"\
+date: "2024-11-17"\
+output:\
+pdf_document: default\
+html_document: default
+
+------------------------------------------------------------------------
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+YouTube's recommendation system is known for its unpredictability. Just today, I received a suggestion for a [video of the 1997 Macy's Thanksgiving Day Parade balloon incident with Barney](https://www.youtube.com/watch?v=epgXuMB1sF8). It seemed completely random, yet it intrigued me enough to watch (and it was worth it!). Many people in the comments expressed similar confusion about why this video suddenly appeared in their feeds on a random November day in 2024. Owned by Google, YouTube is a platform that allows independent creators to publish videos for users to stream. The site's 'algorithm' has gained a bit of infamy, with many creators attributing shifts in their views and earnings to it.
+
+# Scenario Design Analysis {.tabset}
+
+## For the Organization (YouTube)
+
+1.  **Who are YouTube's target users?**
+
+    -   YouTube aims to attract a broad audience interested in streaming various types of video content, whether on-demand, short-form videos, or live streams.
+
+2.  **What are YouTube's key objectives?**
+
+    -   YouTube's primary goals are to maximize advertising revenue and boost user engagement by keeping viewers on the platform longer, encouraging interactions, and enhancing viewer retention.
+
+3.  **How does YouTube achieve these goals?**
+
+    -   YouTube engages users by recommending content tailored to their preferences. It encourages users to sign in via their Google accounts to personalize interactions. As users watch and interact with more content, the system refines recommendations to better align with their interests, helping YouTube retain viewers and increase ad revenue.
+
+## For the Users (Viewers)
+
+1.  **Who are YouTube's users?**
+
+    -   The audience includes anyone who wants to watch video content online for convenience and variety, spanning interests in entertainment, learning, news, and more.
+
+2.  **What are their main goals?**
+
+    -   Users aim to watch content that aligns with their interests, whether for entertainment, educational purposes, news, or product reviews.
+
+3.  **How does YouTube help them meet these goals?**
+
+    -   By logging in and interacting with videos (subscribing, liking, commenting), users enable YouTube’s algorithm to tailor recommendations to their preferences, offering a more personalized and relevant experience.
+
+# Reverse Engineering
+
+While signing in to YouTube isn’t required, the platform nudges users toward it by limiting certain interactions for non-signed-in viewers. Key actions that require logging in include:
+
+-   Subscribing to a channel\
+-   Liking or commenting on videos\
+-   Participating in live stream chats\
+-   Donating to live stream creators\
+-   Watching age-restricted content
+
+Upon logging in, users typically see trending videos and recommendations based on their previous activities. As users continue to watch, like, and comment, the system further customizes their feed. YouTube tracks various metrics—such as time spent on a video—to inform its recommendations. For example, if a viewer spends a long time watching certain videos, similar content may be prioritized in recommendations. Conversely, videos quickly skipped over appear less frequently. Additionally, users are exposed to content popular among others with similar interests.
+
+For more insights, YouTube published a [blog post](https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/) detailing how its recommendation system works. According to YouTube, recommendations are primarily driven by viewing habits, clicks, watch time, survey responses, shares, likes, and dislikes.
+
+# Suggestions for Improvement
+
+Given YouTube's connection with Google, it’s likely that Google search history helps drive YouTube’s recommendations. To make recommendations even more tailored, YouTube might consider expanding to include data from Google Chrome history and cookies. While these measures would significantly invade user privacy, they could result in highly personalized recommendations.
+
+YouTube could also enhance its use of the dislike button, potentially adopting a Reddit-like scoring system where content with a high ratio of dislikes appears less frequently. Additionally, non-premium users might benefit from an offline download option. This feature could increase engagement by tracking downloaded videos for recommendation purposes.
+
+Finally, YouTube should consider enhancing its algorithm to use AI for categorizing and tagging videos based on content. This improved tagging system could refine recommendations further, making them more accurate for each user.
